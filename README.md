@@ -1,4 +1,4 @@
-==Explanation==
+# Explanation
 
 You would like to split a PDF File or a Ebook into several subfiles? But you dont want to waste your time to use "print to pdf" ? 
 
@@ -8,25 +8,23 @@ Just note the pagenumber of the chapters and the offset (these sites which are n
 
 Then the script splits the pdf and stores the subfiles into a new folder, called like the pdfs filename.
 
-==Installation==
+# Installation
 
 pip install git+https://github.com/kamexx/pdf_splitter.git@main
 
-==Usage==
+# Usage
 
-* Move to the folder where your pdf is
-cd folder/where/your/pdf/is
+1. cd folder/where/your/pdf/is
 
-* call the python3 interpreter and the script name, with the parameters
-/bin/python3 pdf_split.py --filename --offset --chapter
+2. /bin/python3 pdf_split.py --filename "str" --offset int --chapter int int int int int int
 
-* Parameter to specify:
---filename: the name of the pdf file
---offset: the pages you want to skip until chapter 1
---chapter: list of pagenumbers where the chapter starts
+3. Parameter to specify:
+- filename: the name of the pdf file
+- offset: the pages you want to skip until chapter 1
+- chapter: list of pagenumbers where the chapter starts
 
-* Example
-cd my_pdf_collection/
-/bin/python3 pdf_split.py --filename myscript.pdf --offset 18 --chapter 1 9 35 53 71 93 117 127 139 153 169
+# Example
+- cd my_pdf_collection/
+- /bin/python3 pdf_split.py --filename myscript.pdf --offset 18 --chapter 1 9 35 53 71 93 117 127 139 153 169
 
 
