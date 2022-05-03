@@ -10,21 +10,23 @@ Then the script splits the pdf and stores the subfiles into a new folder, called
 
 # Installation
 
-pip install git+https://github.com/kamexx/pdf_splitter.git@main
+/bin/python3 -m pip install git+https://github.com/kamexx/pdf_splitter.git@main
 
 # Usage
 
 1. cd folder/where/your/pdf/is
 
-2. /bin/python3 pdf_split.py --filename "str" --offset int --chapter int int int int int int
+2. /bin/python3 -m pdfsplit.pdfsplit --filename "str" --offset int --chapter int int int int int int
 
 3. Parameter to specify:
 - filename: the name of the pdf file
 - offset: the pages you want to skip until chapter 1
 - chapter: list of pagenumbers where the chapter starts
 
+4. optional you can add the python package to your PATH folder, so you can run it without /bin/python3 -m pdfsplit.pdfsplit 
+
 # Example
 - cd my_pdf_collection/
-- /bin/python3 pdf_split.py --filename myscript.pdf --offset 18 --chapter 1 9 35 53 71 93 117 127 139 153 169
+- /bin/python3 -m pdfsplit.pdfsplit --filename myscript.pdf --offset 18 --chapter 1 9 35 53 71 93 117 127 139 153 169
 
 
