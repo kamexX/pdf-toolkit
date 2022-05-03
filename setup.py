@@ -1,3 +1,5 @@
+from setuptools import setup
+
 setup(
    name='Pdf Splitter',
    version='1.0',
