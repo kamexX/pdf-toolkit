@@ -5,6 +5,6 @@ setup(
    version='1.0',
    description='Utility to split a PDF into several chapter',
    author='KamexX',
-   packages=['pdf_splitter'], 
+   packages=['pdfsplit'], 
    install_requires=['pypdf2']
 )
