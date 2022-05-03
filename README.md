@@ -1,10 +1,10 @@
 # Explanation
 
-You would like to split a PDF File or a Ebook into several subfiles? But you dont want to waste your time to use "print to pdf" ? 
+You would like to split a PDF File or an eBook into several subfiles? But you don't want to waste your time to use "print to pdf"? 
 
-Then you should use the CLI Utility PDF Splitter, to split the PDF without bunch of work.
+Then you should use the CLI Utility pdfsplit, to split the PDF without bunch of work.
 
-Just note the pagenumber of the chapters and the offset (these sites which are not included in your pdf page if you want to skip a part at the beginning)  
+Just note the pagenumber of each chapters and the offset (these sites which are not included in your pdf page if you want to skip a part at the beginning)
 
 Then the script splits the pdf and stores the subfiles into a new folder, called like the pdfs filename.
 
