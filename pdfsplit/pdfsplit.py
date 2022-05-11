@@ -1,5 +1,6 @@
 from PyPDF2 import PdfFileReader, PdfFileWriter
 from pathlib import Path
+from . import pdfrename
 
 import argparse
 import os
