@@ -1,6 +1,6 @@
-from PyPDF2 import PdfFileReader, PdfFileWriter
+from pypdf import PdfReader, PdfWriter
 from pathlib import Path
-from . import pdfrename
+#from . import pdfrename
 
 import argparse
 import os
@@ -24,7 +24,7 @@ if __name__ == "__main__":
     outputFilepath =  outputFolder + "/Chapter_{}.pdf"
 
     # read the pdf file
-    infile = PdfFileReader(filename)
+    infile = PdfReader(filename)
 
     # create new pdf directory
     if not os.path.exists(outputFolder):
@@ -41,14 +41,15 @@ if __name__ == "__main__":
 
         # set end index to the end of the book
         else:
-            end = infile.getNumPages()
+            end = len(infile.pages)
 
         # reinitialize he pdf writer, since the pages are stil stored 
-        pdfwriter = PdfFileWriter()
+        pdfwriter = PdfWriter()
 
         # walkthorugh pages and append to the pdf writer
         for pagenumber in range(start-1, end):
-            pdfwriter.addPage(infile.getPage(pagenumber))
+            pdfwriter.add_page(infile.pages[pagenumber])
+            
 
         # write to the output file
         with Path(outputFilepath.format( chapterIndex+1 )).open("wb") as out:
