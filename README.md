@@ -1,15 +1,15 @@
 
 # pdfsplit
 
-Ein einfaches CLI-Tool zum schnellen Aufteilen von PDF-Dateien oder eBooks in mehrere Kapitel-Subfiles, ohne den Umweg über „Drucken als PDF“ gehen zu müssen.
+A simple CLI tool to quickly split PDF files or eBooks into multiple chapter subfiles without the hassle of “print to PDF.”
 
 ---
 
 ## Features
 
-- Zerlegt PDFs anhand definierter Kapitelanfangsseiten.
-- Überspringt optional Seiten am Dokumentanfang (Offset).
-- Speichert die einzelnen Kapitel in einem neuen Ordner mit dem Namen der Original-PDF.
+- Splits PDFs based on defined chapter start pages.
+- Optionally skips pages at the beginning of the document (offset).
+- Saves individual chapters in a new folder named after the original PDF.
 
 ---
 
@@ -21,27 +21,27 @@ Ein einfaches CLI-Tool zum schnellen Aufteilen von PDF-Dateien oder eBooks in me
 
 ---
 
-## Verwendung
+## Usage
 
-1. Wechsle in das Verzeichnis, in dem sich deine PDF-Datei befindet:
+1. Change to the directory where your PDF file is located:
    ```bash
-   cd /pfad/zur/pdf
+   cd /path/to/pdf
    ```
 
-2. Führe das Skript mit den notwendigen Parametern aus:
+2. Run the script with the required parameters:
    ```bash
-   /bin/python3 -m pdfsplit.pdfsplit --filename "dateiname.pdf" --offset 0 --chapter 1 10 20 30
+   /bin/python3 -m pdfsplit.pdfsplit --filename "filename.pdf" --offset 0 --chapter 1 10 20 30
    ```
 
-### Parameter
+### Parameters
 
-- `--filename`: Name der PDF-Datei (inkl. Endung).
-- `--offset`: Anzahl der Seiten, die zu Beginn übersprungen werden sollen (Standard: 0).
-- `--chapter`: Liste der Seitenzahlen, an denen ein neues Kapitel beginnt.
+- `--filename`: Name of the PDF file (including extension).
+- `--offset`: Number of pages to skip at the beginning (default: 0).
+- `--chapter`: List of page numbers where each chapter starts.
 
 ---
 
-## Beispiel
+## Example
 
 ```bash
 cd my_pdf_collection/
@@ -49,21 +49,21 @@ cd my_pdf_collection/
 /bin/python3 -m pdfsplit.pdfsplit --filename myscript.pdf --offset 18 --chapter 1 9 35 53 71 93 117 127 139 153 169
 ```
 
-Das Skript erstellt einen neuen Ordner `myscript`, in dem die einzelnen Kapitel als separate PDF-Dateien abgelegt werden.
+The script will create a new folder called `myscript` and save the individual chapters as separate PDF files there.
 
 ---
 
 ## Optional
 
-Du kannst das Python-Paket auch in deinen `PATH` aufnehmen, um das Tool ohne den langen Aufruf `/bin/python3 -m pdfsplit.pdfsplit` verwenden zu können.
+You can also add the Python package to your `PATH` to run the tool without using the full command `/bin/python3 -m pdfsplit.pdfsplit`.
 
 ---
 
-## Lizenz
+## License
 
 MIT License  
 (C) 2025 by kamexx
 
 ---
 
-Bei Fragen oder Problemen gerne melden!
+Feel free to reach out if you have any questions or issues!
