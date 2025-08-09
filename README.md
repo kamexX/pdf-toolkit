@@ -1,32 +1,69 @@
-# Explanation
 
-You would like to split a PDF File or an eBook into several subfiles? But you don't want to waste your time to use "print to pdf"? 
+# pdfsplit
 
-Then you should use the CLI Utility pdfsplit, to split the PDF without bunch of work.
+Ein einfaches CLI-Tool zum schnellen Aufteilen von PDF-Dateien oder eBooks in mehrere Kapitel-Subfiles, ohne den Umweg über „Drucken als PDF“ gehen zu müssen.
 
-Just note the pagenumber of each chapters and the offset (these sites which are not included in your pdf page if you want to skip a part at the beginning)
+---
 
-Then the script splits the pdf and stores the subfiles into a new folder, called like the pdfs filename.
+## Features
 
-# Installation
+- Zerlegt PDFs anhand definierter Kapitelanfangsseiten.
+- Überspringt optional Seiten am Dokumentanfang (Offset).
+- Speichert die einzelnen Kapitel in einem neuen Ordner mit dem Namen der Original-PDF.
 
+---
+
+## Installation
+
+```bash
 /bin/python3 -m pip install git+https://github.com/kamexx/pdf_splitter.git@main
+```
 
-# Usage
+---
 
-1. cd folder/where/your/pdf/is
+## Verwendung
 
-2. /bin/python3 -m pdfsplit.pdfsplit --filename "str" --offset int --chapter int int int int int int
+1. Wechsle in das Verzeichnis, in dem sich deine PDF-Datei befindet:
+   ```bash
+   cd /pfad/zur/pdf
+   ```
 
-3. Parameter to specify:
-- filename: the name of the pdf file
-- offset: the pages you want to skip until chapter 1
-- chapter: list of pagenumbers where the chapter starts
+2. Führe das Skript mit den notwendigen Parametern aus:
+   ```bash
+   /bin/python3 -m pdfsplit.pdfsplit --filename "dateiname.pdf" --offset 0 --chapter 1 10 20 30
+   ```
 
-4. optional you can add the python package to your PATH folder, so you can run it without /bin/python3 -m pdfsplit.pdfsplit 
+### Parameter
 
-# Example
-- cd my_pdf_collection/
-- /bin/python3 -m pdfsplit.pdfsplit --filename myscript.pdf --offset 18 --chapter 1 9 35 53 71 93 117 127 139 153 169
+- `--filename`: Name der PDF-Datei (inkl. Endung).
+- `--offset`: Anzahl der Seiten, die zu Beginn übersprungen werden sollen (Standard: 0).
+- `--chapter`: Liste der Seitenzahlen, an denen ein neues Kapitel beginnt.
 
+---
 
+## Beispiel
+
+```bash
+cd my_pdf_collection/
+  
+/bin/python3 -m pdfsplit.pdfsplit --filename myscript.pdf --offset 18 --chapter 1 9 35 53 71 93 117 127 139 153 169
+```
+
+Das Skript erstellt einen neuen Ordner `myscript`, in dem die einzelnen Kapitel als separate PDF-Dateien abgelegt werden.
+
+---
+
+## Optional
+
+Du kannst das Python-Paket auch in deinen `PATH` aufnehmen, um das Tool ohne den langen Aufruf `/bin/python3 -m pdfsplit.pdfsplit` verwenden zu können.
+
+---
+
+## Lizenz
+
+MIT License  
+(C) 2025 by kamexx
+
+---
+
+Bei Fragen oder Problemen gerne melden!
